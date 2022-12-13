@@ -4023,6 +4023,7 @@ module.exports={
 
 const json = require('./data.json');
 document.getElementById('refresh').addEventListener('click', () => {
+  tbody.innerHTML = "";
   json.aweme_list.forEach((post) => {
     let row = document.createElement('tr');
     let tbody = document.getElementById('tbody');
@@ -4040,7 +4041,6 @@ document.getElementById('refresh').addEventListener('click', () => {
     row.appendChild(desc);
     row.appendChild(like);
     tbody.appendChild(row);
-    console.log(post.statistics.digg_count)
   });
 });
 
