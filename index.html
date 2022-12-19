@@ -14,7 +14,7 @@
   </head>
   <body>
     <div class="container mt-5">
-      <table class="table">
+      <table class="table" data-sortable>
         <thead class="thead-dark">
           <tr>
             <th scope="col">Nom</th>
@@ -23,10 +23,11 @@
             <th scope="col">Nombre de like</th>
           </tr>
         </thead>
-        <tbody id="tbody">
-        </tbody>
+        <tbody id="tbody"></tbody>
       </table>
-      <button type="button" class="btn btn-success mt-2" id="refresh">Actualiser</button>
+      <button type="button" class="btn btn-success mt-2" id="refresh">
+        Actualiser
+      </button>
     </div>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -43,6 +44,7 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-    <script src="./bundle.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./index.js" type="module"></script>
   </body>
 </html>
