@@ -8,7 +8,7 @@ const options = {
 
 document.getElementById("refresh").addEventListener("click", () => {
   fetch(
-    "https://scraptik.p.rapidapi.com/music-posts?music_id=7049497828150102790&count=18&cursor=0",
+    "https://scraptik.p.rapidapi.com/music-posts?music_id=7180057321811249925&count=18&cursor=0",
     options
   ).then(function (response) {
     response
