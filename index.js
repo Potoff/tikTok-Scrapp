@@ -6,6 +6,10 @@ const options = {
   },
 };
 
+let url = "https://www.tiktok.com/@gaetan.hnova/video/7180742150877940997?_r=1&u_code=0&preview_pb=0&language=en&_d=e5g2h22milcl6f&share_item_id=7180742150877940997&source=h5_m";
+let spliturl = url.split('?')[0];
+console.log(spliturl)
+
 document.getElementById("refresh").addEventListener("click", () => {
   fetch(
     "https://scraptik.p.rapidapi.com/music-posts?music_id=7180057321811249925&count=18&cursor=0",
@@ -27,12 +31,13 @@ document.getElementById("refresh").addEventListener("click", () => {
           let desc = document.createElement("td");
           let like = document.createElement("td");
           let url = document.createElement("td");
+          let splitUrl = post.share_url.split('?')[0];
           th.setAttribute("scope", "row");
           th.innerText = post.author.nickname;
           uniqueId.innerText = post.author.unique_id;
           desc.innerText = post.desc;
           like.innerText = post.statistics.digg_count;
-          url.innerText = post.share_url;
+          url.innerHTML = `<a href="${post.share_url}">${splitUrl}</a>`;
           row.appendChild(th);
           row.appendChild(uniqueId);
           row.appendChild(desc);
