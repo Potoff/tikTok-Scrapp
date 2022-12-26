@@ -26,15 +26,18 @@ document.getElementById("refresh").addEventListener("click", () => {
           let uniqueId = document.createElement("td");
           let desc = document.createElement("td");
           let like = document.createElement("td");
+          let url = document.createElement("td");
           th.setAttribute("scope", "row");
           th.innerText = post.author.nickname;
           uniqueId.innerText = post.author.unique_id;
           desc.innerText = post.desc;
           like.innerText = post.statistics.digg_count;
+          url.innerText = post.share_url;
           row.appendChild(th);
           row.appendChild(uniqueId);
           row.appendChild(desc);
           row.appendChild(like);
+          row.appendChild(url);
           tbody.appendChild(row);
         });
       })
