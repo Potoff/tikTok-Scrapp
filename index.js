@@ -6,10 +6,6 @@ const options = {
   },
 };
 
-let url = "https://www.tiktok.com/@gaetan.hnova/video/7180742150877940997?_r=1&u_code=0&preview_pb=0&language=en&_d=e5g2h22milcl6f&share_item_id=7180742150877940997&source=h5_m";
-let spliturl = url.split('?')[0];
-console.log(spliturl)
-
 document.getElementById("refresh").addEventListener("click", () => {
   fetch(
     "https://scraptik.p.rapidapi.com/music-posts?music_id=7180057321811249925&count=18&cursor=0",
