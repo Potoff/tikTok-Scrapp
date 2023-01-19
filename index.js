@@ -8,12 +8,13 @@ const options = {
 
 document.getElementById("refresh").addEventListener("click", () => {
   fetch(
-    "https://scraptik.p.rapidapi.com/music-posts?music_id=7180057321811249925&count=18&cursor=0",
+    "https://scraptik.p.rapidapi.com/music-posts?music_id=7180057321811249925",
     options
   ).then(function (response) {
     response
       .json()
       .then((response) => {
+        console.log(response)
         tbody.innerHTML = "";
         response.aweme_list.sort((a, b) => {
           return parseFloat(b.statistics.digg_count) - parseFloat(a.statistics.digg_count)          
@@ -40,6 +41,7 @@ document.getElementById("refresh").addEventListener("click", () => {
           row.appendChild(like);
           row.appendChild(url);
           tbody.appendChild(row);
+          localStorage.setItem('body',tbody);
         });
       })
       .catch(function (error) {
